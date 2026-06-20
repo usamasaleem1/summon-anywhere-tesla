@@ -1,6 +1,8 @@
 # Summon Anywhere
-<img width="917" height="2048" alt="summon" src="https://github.com/user-attachments/assets/655ae9c4-aa40-4c92-b019-430293f08e78" />
 
+<p align="center">
+  <img src="docs/screenshot1.png" alt="Summon Anywhere Screenshot" width="300">
+</p>
 
 **Android-only** Flutter app that extends Tesla Smart Summon range by syncing your phone's mock GPS to your vehicle's real location via the Tesla Fleet API.
 
