@@ -2,6 +2,11 @@
 
 **Android-only** Flutter app that extends Tesla Smart Summon range by syncing your phone's mock GPS to your vehicle's real location via the Tesla Fleet API.
 
+```bash
+git clone https://github.com/usamasaleem1/summon-anywhere-tesla.git
+cd summon-anywhere-tesla
+``` This allows you to summon the car, even if you are not in the radius of the car.
+
 Tesla Smart Summon normally requires your phone to be within a short distance of the car. Summon Anywhere polls your vehicle's GPS every 5 seconds and feeds those coordinates to Android's mock location system, so the Tesla app thinks your phone is standing next to the car — even when you're far away.
 
 You still summon in the **official Tesla app**. Pick a destination on the map (not "Come to me"). This app does not drive the car; it only bridges the location gap.
@@ -40,14 +45,14 @@ flowchart LR
 
 ## Prerequisites (for building)
 
-| Requirement | Notes |
-|-------------|-------|
-| **Android phone** | Physical device recommended; emulator mock location is unreliable |
-| **Developer options** | Enable on your phone before first use |
-| **Flutter SDK** | [Install Flutter](https://docs.flutter.dev/get-started/install) (stable channel) |
-| **Android SDK + JDK 17** | Installed via Android Studio or `sdkmanager` |
-| **Tesla Developer account** | [developer.tesla.com](https://developer.tesla.com) with Fleet API access |
-| **Google Maps API key** | [Maps SDK for Android](https://developers.google.com/maps/documentation/android-sdk/get-api-key) enabled |
+| Requirement                 | Notes                                                                                                    |
+| --------------------------- | -------------------------------------------------------------------------------------------------------- |
+| **Android phone**           | Physical device recommended; emulator mock location is unreliable                                        |
+| **Developer options**       | Enable on your phone before first use                                                                    |
+| **Flutter SDK**             | [Install Flutter](https://docs.flutter.dev/get-started/install) (stable channel)                         |
+| **Android SDK + JDK 17**    | Installed via Android Studio or `sdkmanager`                                                             |
+| **Tesla Developer account** | [developer.tesla.com](https://developer.tesla.com) with Fleet API access                                 |
+| **Google Maps API key**     | [Maps SDK for Android](https://developers.google.com/maps/documentation/android-sdk/get-api-key) enabled |
 
 ---
 
@@ -246,27 +251,27 @@ Tap **How does it work?** on the home screen for an in-app explainer.
 
 ## Troubleshooting
 
-| Symptom | Likely cause | Fix |
-|--------|--------------|-----|
-| OAuth "Client authentication failed" | Wrong client ID/secret or redirect URI mismatch | Check `secrets.json` and Tesla portal redirect URI |
-| Fleet API **412** | Partner registration incomplete | Complete Tesla partner registration for your region |
-| Blank or grey map | Missing/invalid Maps key | Set `GOOGLE_MAPS_API_KEY` in `local.properties`; check API restrictions |
-| Sign-in works but no vehicle on map | Vehicle asleep or wrong Fleet region | Wake vehicle; verify `teslaFleetAudience` matches your region |
-| Summon fails in Tesla app | Mock location not set | Settings → Developer options → Select mock location app → Summon Anywhere |
-| Session stops early | Battery optimization | Disable battery optimization for Summon Anywhere |
-| Build succeeds but sign-in fails | Missing `--dart-define-from-file` | Rebuild with `flutter build apk --release --dart-define-from-file=secrets.json` |
-| "Placeholder" warning at startup | Tesla keys not injected | Create `secrets.json` from example and pass it at build/run time |
+| Symptom                              | Likely cause                                    | Fix                                                                             |
+| ------------------------------------ | ----------------------------------------------- | ------------------------------------------------------------------------------- |
+| OAuth "Client authentication failed" | Wrong client ID/secret or redirect URI mismatch | Check `secrets.json` and Tesla portal redirect URI                              |
+| Fleet API **412**                    | Partner registration incomplete                 | Complete Tesla partner registration for your region                             |
+| Blank or grey map                    | Missing/invalid Maps key                        | Set `GOOGLE_MAPS_API_KEY` in `local.properties`; check API restrictions         |
+| Sign-in works but no vehicle on map  | Vehicle asleep or wrong Fleet region            | Wake vehicle; verify `teslaFleetAudience` matches your region                   |
+| Summon fails in Tesla app            | Mock location not set                           | Settings → Developer options → Select mock location app → Summon Anywhere       |
+| Session stops early                  | Battery optimization                            | Disable battery optimization for Summon Anywhere                                |
+| Build succeeds but sign-in fails     | Missing `--dart-define-from-file`               | Rebuild with `flutter build apk --release --dart-define-from-file=secrets.json` |
+| "Placeholder" warning at startup     | Tesla keys not injected                         | Create `secrets.json` from example and pass it at build/run time                |
 
 ---
 
 ## Project structure (for contributors)
 
-| Path | Purpose |
-|------|---------|
-| `lib/core/services/auth_service.dart` | Tesla OAuth config and token exchange |
-| `lib/core/services/tesla_api_service.dart` | Fleet API client |
+| Path                                               | Purpose                                      |
+| -------------------------------------------------- | -------------------------------------------- |
+| `lib/core/services/auth_service.dart`              | Tesla OAuth config and token exchange        |
+| `lib/core/services/tesla_api_service.dart`         | Fleet API client                             |
 | `lib/features/background/summon_task_handler.dart` | 5-second GPS polling + mock location updates |
-| `android/.../MockLocationHandler.kt` | Native Android mock location provider |
+| `android/.../MockLocationHandler.kt`               | Native Android mock location provider        |
 
 ---
 
