@@ -1,7 +1,7 @@
 # Summon Anywhere
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/0ad4ee0b-23c4-44be-9e1d-48b3f55277d9" alt="Summon Anywhere Screenshot" width="320">
+  <img src="https://github.com/user-attachments/assets/0ad4ee0b-23c4-44be-9e1d-48b3f55277d9" alt="Summon Anywhere Screenshot" width="120">
 </p>
 
 <p align="center">
