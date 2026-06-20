@@ -5,7 +5,7 @@
 ```bash
 git clone https://github.com/usamasaleem1/summon-anywhere-tesla.git
 cd summon-anywhere-tesla
-``` This allows you to summon the car, even if you are not in the radius of the car.
+```
 
 Tesla Smart Summon normally requires your phone to be within a short distance of the car. Summon Anywhere polls your vehicle's GPS every 5 seconds and feeds those coordinates to Android's mock location system, so the Tesla app thinks your phone is standing next to the car — even when you're far away.
 
