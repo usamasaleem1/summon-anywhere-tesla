@@ -1,8 +1,5 @@
 # Summon Anywhere
 
-```md
-# Summon Anywhere
-
 | Screenshot | Demo |
 |------------|------|
 | <img src="YOUR_SCREENSHOT_URL_HERE" width="300"> | https://github.com/user-attachments/assets/8815dfb4-b887-4438-9bd6-ead82a607afe |
