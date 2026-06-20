@@ -1,0 +1,3 @@
+# Copy to android/local.properties and fill in your Google Maps API key.
+# Maps SDK for Android must be enabled in Google Cloud Console.
+GOOGLE_MAPS_API_KEY=YOUR_GOOGLE_MAPS_API_KEY
