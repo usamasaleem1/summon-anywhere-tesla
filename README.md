@@ -34,7 +34,7 @@ flowchart LR
 
 ## Important things to know
 
-- **You need your own Tesla Developer credentials.** This repo does not include API keys. Each builder registers their own OAuth app at [developer.tesla.com](https://developer.tesla.com) and supplies keys locally.
+- **You need your own Tesla Developer credentials.** This repo does not include API keys. Each builder registers their own OAuth app at [developer.tesla.com](https://developer.tesla.com) and supplies keys locally. Tesla gives you like 10$ worth of credits a month by default, and I you won't even hit that if you summon multiple times a day, every day.
 - **Fleet API partner registration may be required.** If you get HTTP 412 errors, complete Tesla's partner account registration for your region.
 - **NA region by default.** The app targets the North America Fleet API. EU and other regions require changing `teslaFleetAudience` in `lib/core/services/auth_service.dart`.
 - **Developer options required.** You must enable mock location on your Android phone — this is not a normal consumer app install flow.
