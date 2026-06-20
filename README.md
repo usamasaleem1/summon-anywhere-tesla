@@ -4,6 +4,10 @@
 
 
 
+https://github.com/user-attachments/assets/8815dfb4-b887-4438-9bd6-ead82a607afe
+
+
+
 **Android-only** Flutter app that extends Tesla Smart Summon range by syncing your phone's mock GPS to your vehicle's real location via the Tesla Fleet API.
 
 ```bash
